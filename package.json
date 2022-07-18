@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "api": "node api/api.js"
+        "api": "node api/api.js",
+        "sdk": "node sdk/sdk.js",
+        "iframe": "node iframe/server.js"
     },
     "keywords": [],
     "author": "",
