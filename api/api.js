@@ -111,7 +111,7 @@ const main = async () => {
         fromTokenChainId: 1, // ETH Mainnet
         toTokenChainId: 137, // Polygon
         userAddress: process.env.WALLET_ADDRESS,
-        feeTokenAddress: "0x16ECCfDbb4eE1A85A33f3A9B21175Cd7Ae753dB4", // ROUTE on Polygon
+        feeTokenAddress: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE", // ETH on Mainnet
         slippageTolerance: 2,
     };
     const pathfinder_response = await fetchPathfinderData(args);
