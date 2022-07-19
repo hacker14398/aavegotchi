@@ -117,8 +117,8 @@ const main = async () => {
 
     // setting up wallet
     const provider = new ethers.providers.JsonRpcProvider(
-        "https://polygon-rpc.com",
-        137
+        "https://cloudflare-eth.com/",
+        1
     );
     const PRIVATE_KEY = process.env.PRIVATE_KEY
         ? process.env.PRIVATE_KEY

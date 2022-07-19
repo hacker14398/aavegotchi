@@ -62,24 +62,24 @@ const main = async () => {
             wallet
         );
     }
-    if (
-        ethers.utils.getAddress(args.src_token_address) !==
-        ethers.utils.getAddress(args.fee_token_address)
-    ) {
-        let fee_token_allowance = await routerprotocol.getFeeTokenAllowance(
-            args.fee_token_address,
-            args.dest_chain_id,
-            args.user_address
-        );
-        if (fee_token_allowance.lt(ethers.constants.MaxUint256)) {
-            await routerprotocol.approveFeeToken(
-                args.fee_token_address,
-                args.user_address,
-                ethers.constants.MaxUint256.toString(),
-                wallet
-            );
-        }
-    }
+    // if (
+    //     ethers.utils.getAddress(args.src_token_address) !==
+    //     ethers.utils.getAddress(args.fee_token_address)
+    // ) {
+    //     let fee_token_allowance = await routerprotocol.getFeeTokenAllowance(
+    //         args.fee_token_address,
+    //         args.dest_chain_id,
+    //         args.user_address
+    //     );
+    //     if (fee_token_allowance.lt(ethers.constants.MaxUint256)) {
+    //         await routerprotocol.approveFeeToken(
+    //             args.fee_token_address,
+    //             args.user_address,
+    //             ethers.constants.MaxUint256.toString(),
+    //             wallet
+    //         );
+    //     }
+    // }
 
     // execute the transaction
     let tx;
