@@ -1,8 +1,6 @@
-import { ethers, Contract } from "ethers";
-import axios from "axios";
-
-import dotenv from "dotenv";
-
+const axios = require("axios");
+const { ethers, Contract } = require("ethers");
+const dotenv = require("dotenv");
 dotenv.config();
 
 const PATH_FINDER_API_URL = "https://api.pathfinder.routerprotocol.com/api";
@@ -11,6 +9,7 @@ const fetchPathfinderData = async (params) => {
     const endpoint = "quote";
     const pathUrl = `${PATH_FINDER_API_URL}/${endpoint}`;
     console.log(pathUrl);
+    console.log(params);
     try {
         const res = await axios.get(pathUrl, { params });
         return res.data;

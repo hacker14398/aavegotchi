@@ -1,15 +1,22 @@
-import { RouterProtocol } from "@routerprotocol/router-js-sdk";
-import { ethers } from "ethers";
+const { RouterProtocol } = require("@routerprotocol/router-js-sdk");
+const { ethers } = require("ethers");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const main = async () => {
     // initialize a RouterProtocol instance
     let SDK_ID = "24"; // get your unique sdk id by contacting us on Telegram
-    let chainId = "1";
+    let chainId = 1;
     const provider = new ethers.providers.JsonRpcProvider(
         "https://cloudflare-eth.com/",
         chainId
     );
-    const routerprotocol = new RouterProtocol(SDK_ID, chainId, provider);
+    const routerprotocol = new RouterProtocol(
+        SDK_ID,
+        chainId.toString(),
+        provider
+    );
     await routerprotocol.initailize();
 
     // get a quote for USDC transfer from Polygon to Fantom
